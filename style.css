@@ -17,11 +17,12 @@ ul {
   list-style: none;
 }
 
-/* General Styles */
+
+/* General Styles ------------------> */
 
 .wrapper {
-  max-width: 1400px;
-  width: 80%;
+  width: 1400px;
+  max-width: 1180px;
   margin: 0 auto;
 }
 
@@ -134,6 +135,7 @@ ul ul li {
 ul ul ul {
   list-style-type: circle;
   font-size: 2rem;
+  padding-left: 35px;
 }
 
 ul ul ul li {
@@ -155,10 +157,12 @@ ol li {
 
 ol ol {
   list-style-type: lower-alpha;
+  padding-left: 35px;
 }
 
 ol ol ol {
   list-style-type: lower-roman;
+  padding-left: 30px;
 }
 
 /* Article Links */
@@ -186,9 +190,11 @@ h3 {
   line-height: 3.84rem;
 }
 
+
 /* Article ---------------------> */
 
 article {
+  max-width: 1185px;
   border-top: 2px solid var(--sub-heading-colour);
   display: flex;
 }
@@ -208,7 +214,7 @@ span {
 }
 
 .article__body {
-  max-width: 70%;
+  max-width: 720px;
 }
 
 /* Links */
@@ -220,7 +226,8 @@ article a {
   padding: 15px 45px;
   border: 1px solid var(--border-colour);
   border-radius: 4px;
-  transition: all 0.3s ease-in;
+  transition-property: background color;
+  transition: 0.3s ease-out;
 }
 
 article a:hover,
@@ -233,10 +240,12 @@ article a:first-of-type {
   margin-right: 20px;
 }
 
+
 /* Card Section -----------------> */
 .card {
   padding-top: 100px;
   display: flex;
+  flex-wrap: wrap;
 }
 
 .card__container:first-of-type {
@@ -265,8 +274,14 @@ img {
 .card__body {
   height: 370px;
   padding: 60px;
-
+  
   position: relative;
+}
+
+.card__body p {
+  height: 70%;
+  overflow: hidden;
+  margin-bottom: 110px;
 }
 
 /* Card Links */
@@ -291,4 +306,73 @@ img {
 .card__body a:hover::after,
 .card__body a:focus::after {
   background-position: right bottom;
+}
+
+
+/* Queries --------------------------------> */
+
+@media(max-width: 1230px) {
+  .wrapper {
+    width: 80%;
+  }
+
+  article {
+    display: block;
+  }
+
+  .article__body {
+    margin: 0 auto;
+  }
+
+  .article__links {
+    text-align: center;
+  }
+  
+  .card__container {
+    width: 700px;
+    margin: 0 auto;
+  }
+
+  .card__container:first-of-type {
+    margin: 0 auto 50px auto;
+  }
+
+  /* End of Query */
+}
+
+/* Small Screens / Tablet / Mobile */
+@media(max-width: 870px) {
+  .wrapper {
+    width: 90%;
+  }
+
+  .card__container {
+    width: 520px;
+  }
+
+  p {
+    font-size: 2rem;
+  }
+
+  .article__links {
+    display: flex;
+    flex-direction: column;
+  }
+
+  article a:first-of-type {
+    margin: 0 0 20px 0;
+  }
+
+  /* End of Query */
+}
+
+/* Smallest Screens / Mobile */
+@media(max-width: 350px) {
+  p {
+    font-size: 1.8rem;
+  }
+
+  .card__body {
+    padding: 35px;
+  }
 }
