@@ -1,0 +1,294 @@
+/* Normalize */
+
+html{line-height:1.15;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%}body{margin:0}article,aside,footer,header,nav,section{display:block}h1{font-size:2em;margin:.67em 0}figcaption,figure,main{display:block}figure{margin:1em 40px}hr{box-sizing:content-box;height:0;overflow:visible}pre{font-family:monospace,monospace;font-size:1em}a{background-color:transparent;-webkit-text-decoration-skip:objects}abbr[title]{border-bottom:none;text-decoration:underline;text-decoration:underline dotted}b,strong{font-weight:inherit}b,strong{font-weight:bolder}code,kbd,samp{font-family:monospace,monospace;font-size:1em}dfn{font-style:italic}mark{background-color:#ff0;color:#000}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}audio,video{display:inline-block}audio:not([controls]){display:none;height:0}img{border-style:none}svg:not(:root){overflow:hidden}button,input,optgroup,select,textarea{font-family:sans-serif;font-size:100%;line-height:1.15;margin:0}button,input{overflow:visible}button,select{text-transform:none}button,html [type=button],[type=reset],[type=submit]{-webkit-appearance:button}button::-moz-focus-inner,[type=button]::-moz-focus-inner,[type=reset]::-moz-focus-inner,[type=submit]::-moz-focus-inner{border-style:none;padding:0}button:-moz-focusring,[type=button]:-moz-focusring,[type=reset]:-moz-focusring,[type=submit]:-moz-focusring{outline:1px dotted ButtonText}fieldset{padding:.35em .75em .625em}legend{box-sizing:border-box;color:inherit;display:table;max-width:100%;padding:0;white-space:normal}progress{display:inline-block;vertical-align:baseline}textarea{overflow:auto}[type=checkbox],[type=radio]{box-sizing:border-box;padding:0}[type=number]::-webkit-inner-spin-button,[type=number]::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}[type=search]::-webkit-search-cancel-button,[type=search]::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}details,menu{display:block}summary{display:list-item}canvas{display:inline-block}template{display:none}[hidden]{display:none}
+
+html { -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;}
+
+*, *:before, *:after {box-sizing: inherit}
+
+/* Reset Defaults */
+body, h2, h4, p, ol, ul {
+  margin: 0;
+  padding: 0;
+  font-weight: normal;
+}
+
+ul {
+  list-style: none;
+}
+
+/* General Styles */
+
+.wrapper {
+  max-width: 1400px;
+  width: 80%;
+  margin: 0 auto;
+}
+
+body {
+  padding: 75px 0;
+}
+
+
+/* Typography, Colours, Lists ----------------> */
+
+html {
+  font-size: 62.5%;
+}
+
+/* Custom Properties */
+:root {
+  /* Colours */
+  --background-colour: #FFF;
+  --body-text-colour: #171717;
+  --main-heading-colour: #00333C;
+  --sub-heading-colour: #003B4D;
+  --border-colour: #85989E;
+  --button-colour: #1D8751;
+
+  /* Fonts */
+  --main-heading-font: 'Lora', serif;
+  --body-font: 'Roboto', sans-serif;
+}
+
+/* Grouped Typographic Styles */
+p,
+article a,
+h4,
+.card__body a,
+h3,
+ul,
+ol {
+  font-family: var(--body-font);
+}
+
+article a,
+h4,
+.card__body a,
+h3,
+ul,
+ol {
+  color: var(--sub-heading-colour);
+}
+
+h2,
+p,
+ul,
+ol {
+  font-weight: 400;
+}
+
+article a,
+.card__body a,
+h3 {
+  font-weight: 500;
+}
+
+a {
+  text-decoration: none;
+}
+
+h4,
+p,
+ol {
+  font-size: 2.4rem;
+}
+
+/* Main Heading */
+h2 {
+  font-family: var(--main-heading-font);
+  font-size: 4rem;
+  color: var(--main-heading-colour);
+  letter-spacing: -10;
+  line-height: 4.4rem;
+}
+
+/* Body Text */
+p {
+  line-height: 3.6rem;
+  color: var(--body-text-colour);
+}
+
+/* Lists */
+
+li {
+  padding-bottom: 15px;
+}
+
+/* Unordered */
+ul {
+  font-size: 2rem;
+  padding-left: 20px;
+  list-style-type: disc;
+}
+
+ul ul {
+  list-style-type: '-';
+  font-size: 2.75rem;
+}
+
+ul ul li {
+  padding-left: 15px;
+}
+
+ul ul ul {
+  list-style-type: circle;
+  font-size: 2rem;
+}
+
+ul ul ul li {
+  padding-left: 7px;
+}
+
+ul li {
+  padding-left: 5px;
+}
+
+/* Ordered */
+ol {
+  padding-left: 25px;
+}
+
+ol li {
+  padding-left: 10px;
+}
+
+ol ol {
+  list-style-type: lower-alpha;
+}
+
+ol ol ol {
+  list-style-type: lower-roman;
+}
+
+/* Article Links */
+article a {
+  font-size: 1.6rem;
+  line-height: 4rem;
+  text-transform: uppercase;
+}
+
+/* Card Heading */
+h4 {
+  font-weight: 700;
+  letter-spacing: 3.12;
+}
+
+/* Card Links */
+.card__body a {
+  font-size: 2.1rem;
+  line-height: 2.94rem;
+}
+
+/* Sub Headings */
+h3 {
+  font-size: 3.2rem;
+  line-height: 3.84rem;
+}
+
+/* Article ---------------------> */
+
+article {
+  border-top: 2px solid var(--sub-heading-colour);
+  display: flex;
+}
+
+h2 {
+  padding: 40px 70px 0 0;
+}
+
+.article__body > p {
+  margin-top: 0;
+  padding-top: 40px;
+}
+
+span {
+  text-decoration: underline 2px var(--button-colour);
+  text-underline-offset: 3px;
+}
+
+.article__body {
+  max-width: 70%;
+}
+
+/* Links */
+.article__links {
+  padding-top: 45px;
+}
+
+article a {
+  padding: 15px 45px;
+  border: 1px solid var(--border-colour);
+  border-radius: 4px;
+  transition: all 0.3s ease-in;
+}
+
+article a:hover,
+article a:focus {
+  background: var(--button-colour);
+  color: var(--background-colour);
+}
+
+article a:first-of-type {
+  margin-right: 20px;
+}
+
+/* Card Section -----------------> */
+.card {
+  padding-top: 100px;
+  display: flex;
+}
+
+.card__container:first-of-type {
+  margin-right: 45px;
+}
+
+.card__container {
+  width: calc(50% - 45px / 2);
+  border: 1px solid var(--border-colour);
+  list-style: none;
+}
+
+.card__poster {
+  width: 100%;
+  height: 290px;
+}
+
+img {
+  width: 100%;
+  height: 100%;
+
+  display: block;
+  object-fit: cover;
+}
+
+.card__body {
+  height: 370px;
+  padding: 60px;
+
+  position: relative;
+}
+
+/* Card Links */
+.card__body a {
+  position: absolute;
+  bottom: 50px;
+}
+
+.card__body a::after {
+  width: 100%;
+  height: 3px;
+  margin-top: 5px;
+  
+  content: '';
+  display: block;
+  background: linear-gradient(to left, #1d875080 50%, var(--button-colour) 50%);
+  background-size: 200% 100%;
+  background-position: left bottom;
+  transition: background-position ease-out 0.5s;
+}
+
+.card__body a:hover::after,
+.card__body a:focus::after {
+  background-position: right bottom;
+}
